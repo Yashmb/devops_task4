@@ -6,9 +6,8 @@ metadata:
     app: webserver
 spec:
   ports:
-    - port: 4949
+    - port: 80
       nodePort: 31000
-      targetPort: 80
   selector:
     app: webserver
     tier: frontend
@@ -35,7 +34,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: mbyash/server:v1
+      - image: httpd
         name: web
         ports:
         - containerPort: 80
